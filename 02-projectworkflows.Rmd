@@ -3,11 +3,12 @@ output:
   pdf_document: default
   html_document: default
 ---
-<!-- This creates wrapping for every code chunk in this file --> 
+<!-- This creates wrapping for every code chunk in this file 
 ```{r echo=FALSE}
 library(knitr)
 opts_chunk$set(tidy.opts=list(width.cutoff=30),tidy=TRUE)
 ```
+--> 
 
 #  Project Workflows  {#workflows}
 
