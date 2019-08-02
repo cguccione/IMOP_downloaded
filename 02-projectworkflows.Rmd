@@ -53,7 +53,7 @@ wflow_publish(c("analysis/*.Rmd"), "Publish the initial files for PROJECT_NAME")
 
 #### Connecting to GitLab
 
-In the `Console` tab, 
+In the `Console` tab,
 
 ```{r b3, eval=FALSE}
 wflow_use_gitlab(username = "first.last", repository = "PROJECT_NAME", domain = "ceres.agios.com")
