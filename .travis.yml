@@ -1,25 +1,14 @@
 language: r
-dist: xenial
-latex: false
-before_install:
-  - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-en language-pack-de
-branches:
-  only:
-  - master
-cache:
-  packages: true
-  directories:
-  - "$HOME/bin"
+pandoc_version: 1.19.2.1
+
+env:
+  global:
+    - secure: kQjXKtrOlXTXA3rwurTW7Cl99BupSTd0QBNoS3fTQfIjAbP3J4gFtQoDg2QHyKncPqtLelBvwo3Yes3pComnrvzClceibwtgTFTnYxkXfSXqAMqvDDHWLRzalUCVImgcbMpu1PMAyfhYHLAGe2pDhULPZZtr4ujn8lYK6Ogq6IfA1Rc1kp9+CPnH+a3HEI0bEyMzBrWUyCBJ+V7Kx2xoHmsPBSZFdQXd5UzXC4WsDYZOBDbQJhzznKOi0JoNSsMAtAWf8hF7BC8Kp0ukNjrzDjjkbAJUzP2RAW8f2034yg7AdJCFThkI1ia/2mH4mgEL1aD1cvvvdCop6Qaghbej+CQyK6o8yttzA6Om276nGjsHvu6atZ6G8kFxURoINSaNLrN7NgvlLA6qP23EOAjM7isV511it+HPgnd5rvyNYFr2D5tfSw28Ecp00lTtIKelDbN0K/zfEdfWWsTQiTWWspDSUtHRxGlfLR16cfQOSy8v41W10fyCQpb+M0j2T8Xn7JAyHWWzWfYDCbv8eYSCYPHCl2HrG5pffEhXXQkn5GzmHDlyPt+PojDsiW+JqFBa0VbNUUUTHZ4SF0nwz0so7h3ZfqNneNbo0uEC5H7FMkPtgdpd/24ul30C5U27J4fdGjby19Qkehkn16ONu+JsstPJ5ed+TWMQYRrajPSekfw=
+
+before_script:
+  - chmod +x ./_build.sh
+  - chmod +x ./_deploy.sh
+
 script:
-- Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: "$GITHUB_TOKEN"
-  on:
-    branch: master
-  local_dir: public
-  repo: cguccione/cguccione.github.io
-  target_branch: master
-GITHUB_PAT=9471ce6caf527c3d1be391cbc0274f4825099f71:
-  secure: kQjXKtrOlXTXA3rwurTW7Cl99BupSTd0QBNoS3fTQfIjAbP3J4gFtQoDg2QHyKncPqtLelBvwo3Yes3pComnrvzClceibwtgTFTnYxkXfSXqAMqvDDHWLRzalUCVImgcbMpu1PMAyfhYHLAGe2pDhULPZZtr4ujn8lYK6Ogq6IfA1Rc1kp9+CPnH+a3HEI0bEyMzBrWUyCBJ+V7Kx2xoHmsPBSZFdQXd5UzXC4WsDYZOBDbQJhzznKOi0JoNSsMAtAWf8hF7BC8Kp0ukNjrzDjjkbAJUzP2RAW8f2034yg7AdJCFThkI1ia/2mH4mgEL1aD1cvvvdCop6Qaghbej+CQyK6o8yttzA6Om276nGjsHvu6atZ6G8kFxURoINSaNLrN7NgvlLA6qP23EOAjM7isV511it+HPgnd5rvyNYFr2D5tfSw28Ecp00lTtIKelDbN0K/zfEdfWWsTQiTWWspDSUtHRxGlfLR16cfQOSy8v41W10fyCQpb+M0j2T8Xn7JAyHWWzWfYDCbv8eYSCYPHCl2HrG5pffEhXXQkn5GzmHDlyPt+PojDsiW+JqFBa0VbNUUUTHZ4SF0nwz0so7h3ZfqNneNbo0uEC5H7FMkPtgdpd/24ul30C5U27J4fdGjby19Qkehkn16ONu+JsstPJ5ed+TWMQYRrajPSekfw=
+  - ./_build.sh
+  - ./_deploy.sh
