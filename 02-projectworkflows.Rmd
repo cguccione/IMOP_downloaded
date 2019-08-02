@@ -13,9 +13,11 @@ opts_chunk$set(tidy.opts=list(width.cutoff=30),tidy=TRUE)
 
 <!-- Start of Caitlin Guccione Workflowr - Summer 2019 -->
 
+<!--
 ```{r klippy1, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
+-->
 
 ## Using Workflowr
 
