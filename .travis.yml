@@ -1,5 +1,6 @@
 language: r
 dist: xenial
+sudo: false
 latex: false
 branches:
   only:
