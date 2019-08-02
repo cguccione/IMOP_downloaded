@@ -1,6 +1,6 @@
 --- 
 title: "Informatics team manual of procedures"
-author: "Ania Tassinari & Caitlin Guccione"
+author: "Ania Tassinari & Caitlin Guccione eee"
 #
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
