@@ -2,5 +2,5 @@ Package: placeholder
 Type: Book
 Title: Does not matter.
 Version: 0.0.1
-Imports: bookdown, klippy, devtools
+Imports: bookdown, devtools
 Remotes: rstudio/bookdown
