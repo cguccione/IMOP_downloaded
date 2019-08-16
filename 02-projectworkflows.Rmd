@@ -3,22 +3,30 @@ output:
   pdf_document: default
   html_document: default
 ---
-<!-- This creates wrapping for every code chunk in this file 
+
+<!-- This creates wrapping for every code chunk in this file -->
 ```{r echo=FALSE}
 library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
+```
+
+<!--
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+require(knitr)
+# Set so that long lines in R will be wrapped:
 opts_chunk$set(tidy.opts=list(width.cutoff=30),tidy=TRUE)
 ```
---> 
+-->
 
 #  Project Workflows  {#workflows}
 
 <!-- Start of Caitlin Guccione Workflowr - Summer 2019 -->
 
-<!--
+
 ```{r klippy1, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
--->
+
 
 ## Using Workflowr
 
@@ -264,7 +272,7 @@ This allows you to view which files are published or unpublished currently.
 
 Now we want to publish our page the command to do so takes three parts
 
-1. c - Stands for commit
+1. c -  Concatenate elements of a vector
 2. ("analysis/index.Rmd", "analysis/about.Rmd", "analysis/license.Rmd")
     + A character vector of the Rmd files you want to be published
     + It may be easier to place ("*.Rmd") here to use all the files

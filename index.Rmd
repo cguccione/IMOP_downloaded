@@ -1,6 +1,6 @@
 --- 
 title: "Informatics team manual of procedures"
-author: "Ania Tassinari & Caitlin Guccione eee"
+author: "Ania Tassinari & Caitlin Guccione"
 #
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -9,7 +9,7 @@ bookdown::gitbook:
   config:
     fontsettings:
       theme: Night
-documentclass: article
+documentclass: book
 classoption: openany
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
